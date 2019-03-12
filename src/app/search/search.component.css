@@ -1,0 +1,9 @@
+.search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.search__label {
+  margin-bottom: 0;
+}
