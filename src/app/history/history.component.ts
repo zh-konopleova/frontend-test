@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-history',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./history.component.css']
 })
 export class HistoryComponent implements OnInit {
+  requestList;
 
-  constructor() { }
+  constructor(private appService: AppService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.requestList = this.appService.getAllRequests();
   }
 
 }

@@ -1,11 +1,13 @@
 <div class="container">
-  <form class="input-group my-5 search" action="index.html" method="post">
+  <form class="input-group my-5 search" (ngSubmit)="onSubmit()">
     <label class="search__label mr-3" for="search">I'm looking for</label>
     <input
       type="text"
       id="search"
       class="form-control"
       placeholder="Text of my search request"
+      name="query"
+      [(ngModel)] ="query"
     >
     <button class="btn btn-outline-secondary px-5 ml-2" type="submit">
       <i class="fas fa-search"></i>

@@ -1,20 +1,19 @@
 <div class="container">
   <h2>Search history -
-    <span>№</span>
+    <span>{{ (requestList | async)?.length }}</span>
     requests
   </h2>
 
-  <ul class="list-group list-group-flush">
+  <ul class="list-group list-group-flush" *ngFor="let request of requestList | async; let i = index">
     <li class="list-group-item border-bottom history__item">
       <div class="history__content">
         <span>01.01.1970 00:00</span>
-        <span>Cras justo odio</span>
+        <span>{{ request.query }}</span>
       </div>
       <button class="btn btn-primary" type="button" name="button">
         <i class="far fa-trash-alt"></i>
         Delete
       </button>
     </li>
-    <li class="list-group-item border-bottom">Dapibus ac facilisis in</li>
   </ul>
 </div>
