@@ -8,8 +8,11 @@ import { AppService } from '../app.service';
 })
 export class HistoryComponent implements OnInit {
   requestList;
+  request;
 
-  constructor(private appService: AppService) { }
+  constructor(private appService: AppService) {
+
+   }
 
   ngOnInit(): void {
     this.requestList = this.appService.getAllRequests();

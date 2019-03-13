@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
@@ -17,6 +17,18 @@ export class AppService {
     this.db.collection('search-history').add({query});
   }
 
+  deleteRequest() {
+    alert(123);
+
+  //   // this.ref.collection('search-history').doc().delete();
+  //   // this.db.collection('search-history').doc().delete().then(function() {
+  //   //   console.log("Document successfully deleted!");
+  //   //   })
+  //   // .catch(function(error) {
+  //   //   console.error("Error removing document: ", error);
+  //   // });
+  }
+
   getAllRequests(): Observable<any[]> {
     return this.db.collection('search-history').snapshotChanges().pipe(
       map(actions => {
@@ -28,8 +40,8 @@ export class AppService {
       }));
   }
 
-  getRequest(id): Observable<any> {
-    return this.db.collection('search-history').doc(id).valueChanges();
-  }
+  // getRequest(id): Observable<any> {
+  //   return this.db.collection('search-history').doc(id).valueChanges();
+  // }
 
 }
