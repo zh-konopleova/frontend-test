@@ -10,7 +10,7 @@
         <span>01.01.1970 00:00</span>
         <span>{{ request.query }}</span>
       </div>
-      <button class="btn btn-primary" type="button" name="button" (click)="appService.deleteRequest()">
+      <button class="btn btn-primary" type="button" (click)="appService.deleteRequest(request.id)">
         <i class="far fa-trash-alt"></i>
         Delete
       </button>

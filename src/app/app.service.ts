@@ -14,19 +14,12 @@ export class AppService {
   constructor(private db: AngularFirestore) {}
 
   createRequest(query: string): void {
-    this.db.collection('search-history').add({query});
+    // let createdAt = +new Date();
+    this.db.collection('search-history').add({query, createdAt});
   }
 
-  deleteRequest() {
-    alert(123);
-
-  //   // this.ref.collection('search-history').doc().delete();
-  //   // this.db.collection('search-history').doc().delete().then(function() {
-  //   //   console.log("Document successfully deleted!");
-  //   //   })
-  //   // .catch(function(error) {
-  //   //   console.error("Error removing document: ", error);
-  //   // });
+  deleteRequest(id: string) {
+    this.db.collection('search-history').doc(id).delete();
   }
 
   getAllRequests(): Observable<any[]> {
