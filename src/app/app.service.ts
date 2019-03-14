@@ -14,7 +14,7 @@ export class AppService {
   constructor(private db: AngularFirestore) {}
 
   createRequest(query: string): void {
-    // let createdAt = +new Date();
+    let createdAt = +new Date();
     this.db.collection('search-history').add({query, createdAt});
   }
 

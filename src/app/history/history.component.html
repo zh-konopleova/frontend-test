@@ -7,7 +7,7 @@
   <ul class="list-group list-group-flush" *ngFor="let request of requestList | async; let i = index">
     <li class="list-group-item border-bottom history__item">
       <div class="history__content">
-        <span>01.01.1970 00:00</span>
+        <span>{{ request.createdAt | date: 'dd/MM/yyyy HH:mm' }}</span>
         <span>{{ request.query }}</span>
       </div>
       <button class="btn btn-primary" type="button" (click)="appService.deleteRequest(request.id)">
