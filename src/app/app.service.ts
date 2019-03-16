@@ -3,13 +3,13 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
-export interface Request { query: string;}
-export interface RequestId extends Request { id: string; }
+// export interface Request { query: string;}
+// export interface RequestId extends Request { id: string; }
 
 @Injectable()
 export class AppService {
-  private RequestCollection: AngularFirestoreCollection<Request>;
-  requests: Observable<RequestId[]>;
+  // private RequestCollection: AngularFirestoreCollection<Request>;
+  // requests: Observable<RequestId[]>;
 
   constructor(private db: AngularFirestore) {}
 
@@ -30,6 +30,8 @@ export class AppService {
           const id = a.payload.doc.id;
           return { id, ...data };
         });
+      }), map((requests) => {
+        return requests.sort((a,b) => b.createdAt - a.createdAt)
       }));
   }
 

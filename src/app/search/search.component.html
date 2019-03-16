@@ -6,8 +6,7 @@
       id="search"
       class="form-control"
       placeholder="Text of my search request"
-      name="query"
-      [(ngModel)] ="query"
+      [formControl]="searchControl"
     >
     <button class="btn btn-outline-secondary px-5 ml-2" type="submit">
       <i class="fas fa-search"></i>
