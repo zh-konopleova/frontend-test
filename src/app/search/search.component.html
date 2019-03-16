@@ -1,17 +1,25 @@
 <div class="container search mt-5 mb-3">
-  <form class="form-inline search__form" (ngSubmit)="onSubmit">
+  <form
+    class="form-inline search__form"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()">
+
     <label
       class="search__label mr-sm-2 mb-2"
-      for="search">I'm looking for</label>
+      for="query-input">I'm looking for</label>
     <input
       type="text"
-      id="search"
+      id="query-input"
+      name="query"
       class="form-control search__input mr-sm-2 mb-2"
+      [ngClass]="{'is-valid': isControlValid('query')}"
       placeholder="Text of my search request"
-      [formControl]="searchControl">
+      formControlName="query">
 
     <button
-      class="btn btn-outline-secondary px-5 mb-2" type="submit">
+      class="btn btn-outline-secondary px-5 mb-2"
+      type="submit"
+      [disabled]="!form.valid">
       <i class="fas fa-search"></i>
       Find
     </button>

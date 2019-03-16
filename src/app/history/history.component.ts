@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
 import { AppService } from '../app.service';
+import { Request } from '../request.model';
+
 
 @Component({
   selector: 'app-history',
@@ -7,15 +11,11 @@ import { AppService } from '../app.service';
   styleUrls: ['./history.component.css']
 })
 export class HistoryComponent implements OnInit {
-  requestList;
-  request;
+  requestList: Observable<Request[]>;
 
-  constructor(private appService: AppService) {
-
-   }
+  constructor(private appService: AppService) {}
 
   ngOnInit(): void {
     this.requestList = this.appService.getAllRequests();
   }
-
 }
