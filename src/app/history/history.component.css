@@ -1,12 +1,8 @@
-.history__item {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+.history__h {
+  font-size: 36px;
+  margin-bottom: 20px;
 }
 
-.history__content {
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
+.history__request {
+  width: 100%;
 }

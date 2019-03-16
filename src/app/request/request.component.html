@@ -1,0 +1,16 @@
+<article class="request">
+  <div class="request__content">
+    <h2 class="request__h">{{ request.query }}</h2>
+    <time class="request__time">
+      {{ request.createdAt | date: 'dd/MM/yyyy HH:mm' }}
+    </time>
+  </div>
+
+  <button
+    class="btn btn-primary request__button"
+    type="button"
+    (click)="appService.deleteRequest(request.id)">
+    <i class="far fa-trash-alt"></i>
+    Delete
+  </button>
+</article>

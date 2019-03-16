@@ -7,19 +7,22 @@ import { SearchComponent } from './search/search.component';
 import { HistoryComponent } from './history/history.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AppService } from './app.service';
+import { RequestComponent } from './request/request.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    HistoryComponent
+    HistoryComponent,
+    RequestComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    FormsModule,
     ReactiveFormsModule
   ],
   providers: [AppService],

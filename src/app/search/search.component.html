@@ -1,14 +1,17 @@
-<div class="container">
-  <form class="input-group my-5 search" (ngSubmit)="onSubmit()">
-    <label class="search__label mr-3" for="search">I'm looking for</label>
+<div class="container search mt-5 mb-3">
+  <form class="form-inline search__form" (ngSubmit)="onSubmit">
+    <label
+      class="search__label mr-sm-2 mb-2"
+      for="search">I'm looking for</label>
     <input
       type="text"
       id="search"
-      class="form-control"
+      class="form-control search__input mr-sm-2 mb-2"
       placeholder="Text of my search request"
-      [formControl]="searchControl"
-    >
-    <button class="btn btn-outline-secondary px-5 ml-2" type="submit">
+      [formControl]="searchControl">
+
+    <button
+      class="btn btn-outline-secondary px-5 mb-2" type="submit">
       <i class="fas fa-search"></i>
       Find
     </button>

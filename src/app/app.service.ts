@@ -30,8 +30,6 @@ export class AppService {
           const id = a.payload.doc.id;
           return { id, ...data };
         });
-      }), map((requests) => {
-        return requests.sort((a,b) => b.createdAt - a.createdAt)
       }));
   }
 

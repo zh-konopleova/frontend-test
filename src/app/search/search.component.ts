@@ -15,7 +15,7 @@ export class SearchComponent implements OnInit {
   constructor(private appService: AppService) { }
 
   ngOnInit() {
-    this.searchControl = new FormControl('', [Validators.minLength(1), Validators.maxLength(100)]);
+    // this.searchControl = new FormControl('', [Validators.minLength(1), Validators.maxLength(100)]);
 
     // this.searchControl.valueChanges.subscribe((value) => console.log(value));
     // this.searchControl.statusChanges.subscribe((status) => console.log(status));

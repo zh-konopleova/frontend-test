@@ -1,19 +1,15 @@
-<div class="container">
-  <h2>Search history -
-    <span>{{ (requestList | async)?.length }}</span>
-    requests
-  </h2>
+<section class="container history">
+  <h1 class="history__h">Search history -
+    <span>{{ (requestList | async)?.length }}</span>&nbsp;requests
+  </h1>
 
-  <ul class="list-group list-group-flush" *ngFor="let request of requestList | async; let i = index">
-    <li class="list-group-item border-bottom history__item">
-      <div class="history__content">
-        <span>{{ request.createdAt | date: 'dd/MM/yyyy HH:mm' }}</span>
-        <span>{{ request.query }}</span>
-      </div>
-      <button class="btn btn-primary" type="button" (click)="appService.deleteRequest(request.id)">
-        <i class="far fa-trash-alt"></i>
-        Delete
-      </button>
+  <ul class="list-group list-group-flush history__list">
+    <li class="list-group-item history__item"
+        *ngFor="let request of requestList | async; let i = index">
+        <app-request
+          class="history__request"
+          [request]="request">
+        </app-request>
     </li>
   </ul>
-</div>
+</section>
